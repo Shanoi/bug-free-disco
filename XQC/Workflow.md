@@ -3,7 +3,7 @@
 ## Start
 
 L'utilisateur saisi la commande ***register id password*** dans la cli (s'il n'est pas déjà enregistré) :
-1. Appel à 
+1. Appel à
 
 # PolyEvent Framework Facilitation...
 
