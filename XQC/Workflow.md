@@ -62,4 +62,10 @@ Lançons maintenant *mvn tomee:run* sur le module event. Cela va générer des w
 
 ## Utilisation des WSDL
 
+<<<<<<< HEAD
 Que faire de ces wsdl ? Pour faire propre, on peut les mettre dans le dossier resources du projet dans lequel ils doivent être utilisés. Rappelons qu'il y a précisément 1 wsdl par service WS exposés.
+=======
+Que faire de ces wsdl ? Pour faire propre, on peut les mettre dans le dossier resources du projet dans lequel ils doivent être utilisés. Rappelons qu'il y a précisément 1 wsdl par service WS exposés. Ces wsdl contiennent tout ce qu'il faut pour générer les stubs côté client (Ici notre CLI). Pour générer les stubs on pourra se servir de l'IDE. Il faut simplement faire un clique droit sur les wsdl > WebServices > Generate Java Code From Wsdl. Une fenêtre de dialogue s'ouvre, il faut sélectionner comme *Web Service Platform* la valeur **Glassfish / JAX-RS ...**.
+
+Une fois les stubs générés, la cli va reconnaître tout ce dont elle a besoin pour continuer.
+>>>>>>> 8336b6bce801ffc50634e96c99670c0f38a5477d
