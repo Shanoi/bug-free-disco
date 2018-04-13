@@ -78,7 +78,7 @@ En effet, pour que un container (server ?) tomee puisse être déployé et que l
 
 On peut très vite faire face à des problèmes de compilation, car si d'autres modules dépendent du module dont le packaging est spécifié en war, alors il y aura un problème car il leur faudra un **jar** pour pouvoir compiler... or nous n'avons qu'un **war**. Le trick est donc de spécifier dans le pom.xml du module de déploiement que l'on veut aussi compilé ce dernier en **jar**. C'est facilement faisable grâce à un plugin maven que l'on ajoute dans la balise pom.xml, en voici le code :
 
-```
+```xml
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-war-plugin</artifactId>
@@ -127,6 +127,8 @@ Voici les différentes adresses pour les wsdl :
 + [Responsible](http://localhost:8080/event/webservices/OrganizerWS?wsdl)
 + [Organizer](http://localhost:8080/event/webservices/ResponsibleWS?wsdl)
 
-## Utilisation des WSDL
+### Utilisation des WSDL
 
-Que faire de ces wsdl ? Pour faire propre, on peut les mettre dans le dossier resources du projet dans lequel ils doivent être utilisés. Rappelons qu'il y a précisément 1 wsdl par service WS exposés.
+Que faire de ces wsdl ? Pour faire propre, on peut les mettre dans le dossier resources du projet dans lequel ils doivent être utilisés. Rappelons qu'il y a précisément 1 wsdl par service WS exposés. Ces wsdl contiennent tout ce qu'il faut pour générer les stubs côté client (Ici notre CLI). Pour générer les stubs on pourra se servir de l'IDE. Il faut simplement faire un clique droit sur les wsdl > WebServices > Generate Java Code From Wsdl. Une fenêtre de dialogue s'ouvre, il faut sélectionner comme *Web Service Platform* la valeur **Glassfish / JAX-RS ...**.
+
+Une fois les stubs générés, la cli va reconnaître tout ce dont elle a besoin pour continuer.
