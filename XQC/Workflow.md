@@ -60,6 +60,11 @@ Lançons maintenant *mvn tomee:run* sur le module event. Cela va générer des w
 3. TomEE expose les web services détectés grâce aux annotations **@WebService** sous... **webservices**, on a donc localhost:8080/event/webservices (http://localhost:8080/event/webservices)
 4. Enfin il faut rajouter le nom du web service qui porte le nom de l'interface de ce dernier, ou sinon c'est le nom donné dans un annotation EJB du type **@Stateless(name = "...")**. Sans oublier le **?wsdl** suffixant le nom du web service, on a au final localhost:8080/event/webservices/EventWS?wsdl (http://localhost:8080/event/webservices/EventWS?wsdl).
 
+Voici les différentes adresses pour les wsdl :
++ [Event](http://localhost:8080/event/webservices/EventWS?wsdl)
++ [Responsible](http://localhost:8080/event/webservices/OrganizerWS?wsdl)
++ [Organizer](http://localhost:8080/event/webservices/ResponsibleWS?wsdl)
+
 ## Utilisation des WSDL
 
 Que faire de ces wsdl ? Pour faire propre, on peut les mettre dans le dossier resources du projet dans lequel ils doivent être utilisés. Rappelons qu'il y a précisément 1 wsdl par service WS exposés. Ces wsdl contiennent tout ce qu'il faut pour générer les stubs côté client (Ici notre CLI). Pour générer les stubs on pourra se servir de l'IDE. Il faut simplement faire un clique droit sur les wsdl > WebServices > Generate Java Code From Wsdl. Une fenêtre de dialogue s'ouvre, il faut sélectionner comme *Web Service Platform* la valeur **Glassfish / JAX-RS ...**.
