@@ -119,8 +119,11 @@ Comme on utilise Arquillian, on doit préciser la configuration dans le `arquili
 </property>
 ```
 Le `mem` permet de définir la BD en mémoire (RAM).
+
 Le `shutdown` éteint la BD après la dernière connexion.
+
 Le `JtaManaged` supporte les transactions au niveau du container.
+
 Le `LogSql` permet de logger les requêtes SQL générées par JPA.
 
 Pour tester la persistence, un `EntityManager` est nécessaire.
