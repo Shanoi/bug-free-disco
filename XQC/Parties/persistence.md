@@ -1,33 +1,33 @@
-## Persistence
+# Persistence
 
-### Annotations
+## Annotations
 
-#### Entity
+### Entity
 ```Java
 @Entity
 ```
 Permet de définir une table.
 
-#### Embeddable
+### Embeddable
 ```Java
 @Embeddable
 ```
 Permet de définir un élément qui ne peut pas exister seul. Par exemple si un item fait partie d'un sac.
 
-#### Id et GeneratedValue
+### Id et GeneratedValue
 ```Java
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 ```
 Permet de définir l'attribut ID dans la base de donnée. Il est obligatoire. Le `@GeneratedValue` permet de générer automatiquement la valeur.
 
-#### Temporal
+### Temporal
 ```Java
 @Temporal(TemporalType.DATE)
 ```
 Permet de définir un attribut de type temps. Ici, il permet de définir une `Date`.
 
-#### ManyToOne
+### ManyToOne
 Depuis la classe Event.
 ```Java
 @ManyToOne
@@ -43,13 +43,13 @@ Ne pas oublier de définir la stratégie lorsque l'on delete d'un côté ou de l
 
 ___
 
-### Fichiers nécessaires et arborescence
+## Fichiers nécessaires et arborescence
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Shanoi/bug-free-disco/master/XQC/Imgs/BD.png"/>
 </p>
 
-#### Persistence
+### Persistence
 
 Le ficher **persistence.xml** contient les définitions des classes qui seront persistentes.
 
@@ -75,7 +75,7 @@ Le ficher **persistence.xml** contient les définitions des classes qui seront p
 </persistence-unit>
 ```
 
-#### Resources
+### Resources
 
 Le fichier **resources.xml** contient la définition pour se connecter à la base de données.
 
@@ -93,19 +93,19 @@ Le fichier **resources.xml** contient la définition pour se connecter à la bas
 ```
 -----
 
-### Utilisation
+## Utilisation
 
-#### Constructor
+### Constructor
 Un constructeur vide est nécessaire.
 
-#### Equal
+### Equal
 La méthode `equal` doit reposer sur des business items. On doit pouvoir définir en quoi deux entités sont égales d'un point de vue business.
 Lorsque l'on défini cette méthode, il faut faire attention à ne pas faire de références cycliques qui entraineraient une boucle infinie d'appels.
 
-#### HashCode
+### HashCode
 La fonction `hashcode` doit être correctement définie puisqu'elle sert à identifier les objets en mémoire. Mêmes remarques que pour `equal`.
 
-#### Testing
+### Testing
 Comme on utilise Arquillian, on doit préciser la configuration dans le `arquilian.xml`.
 
 ```xml
