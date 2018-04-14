@@ -17,6 +17,46 @@ L'utilisateur saisi la commande ***register id password*** dans la cli (s'il n'e
 
 ### Annotations
 
+#### Entity
+```Java
+@Entity
+```
+Permet de définir une table.
+
+#### Embeddable
+```Java
+@Embeddable
+```
+Permet de définir un élément qui ne peut pas exister seul. Par exemple si un item fait partie d'un sac.
+
+#### Id et GeneratedValue
+```Java
+@Id
+@GeneratedValue
+```
+Permet de définir l'attribut ID dans la base de donnée. Il est obligatoire. Le `@GeneratedValue` permet de générer automatiquement la valeur.
+
+#### Temporal
+```Java
+@Temporal(TemporalType.DATE)
+```
+Permet de définir un attribut ede type temps. Ici, il permet de définir une `Date`.
+
+#### ManyToOne
+Depuis la classe Event.
+```Java
+@ManyToOne
+private Organizer organizer;
+```
+Depuis la classe Organizer.
+```Java
+@OneToMany(mappedBy = "organizer")
+private Set<Event> events = new HashSet<>();
+```
+Permet de définir la relation entre deux élément de la base de données.
+
+___
+
 ### Fichiers nécessaires et arborescence
 
 <p align="center">
@@ -68,6 +108,9 @@ Le fichier **resources.xml** contient la définition pour se connecter à la bas
 
 ### Utilisation
 
+
+
+-----
 
 ## J2EE & Tomee
 
