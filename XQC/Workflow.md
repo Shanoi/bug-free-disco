@@ -3,6 +3,7 @@
 ## Parties
 
 - [Persistence](https://github.com/Shanoi/bug-free-disco/tree/master/XQC/Parties/persistence.md)
+- [JSF](https://github.com/Shanoi/bug-free-disco/tree/master/XQC/Parties/jsf.md)
 
 ## Start
 
@@ -11,16 +12,6 @@ L'utilisateur saisi la commande ***register id password*** dans la cli (s'il n'e
 
 # PolyEvent Framework Facilitation...
 
-## JSF
-
-### State machine
-
-### Fichiers nécessaires et arborescence
-
-----
-
-
------
 
 ## J2EE & Tomee
 
