@@ -25,7 +25,7 @@ Permet de définir l'attribut ID dans la base de donnée. Il est obligatoire. Le
 ```Java
 @Temporal(TemporalType.DATE)
 ```
-Permet de définir un attribut ede type temps. Ici, il permet de définir une `Date`.
+Permet de définir un attribut de type temps. Ici, il permet de définir une `Date`.
 
 #### ManyToOne
 Depuis la classe Event.
@@ -100,13 +100,13 @@ Un constructeur vide est nécessaire.
 
 #### Equal
 La méthode `equal` doit reposer sur des business items. On doit pouvoir définir en quoi deux entités sont égales d'un point de vue business.
-Lorsque l'on défini cette méthode, il faut faire attention à ne pas faire de références cyclique qui entrainerait une boucle infine d'appels.
+Lorsque l'on défini cette méthode, il faut faire attention à ne pas faire de références cycliques qui entraineraient une boucle infinie d'appels.
 
 #### HashCode
-La fonction `hashcode` doit être correctement défine puisqu'elle sert à identifier les objet en mémoire. Mêmes remarques que pour `equal`.
+La fonction `hashcode` doit être correctement définie puisqu'elle sert à identifier les objets en mémoire. Mêmes remarques que pour `equal`.
 
 #### Testing
-Comme on utilise Arquilian, on doit préciser la configuration dans le `arquilian.xml`.
+Comme on utilise Arquillian, on doit préciser la configuration dans le `arquilian.xml`.
 
 ```xml
 <property name="properties">
@@ -120,7 +120,7 @@ Comme on utilise Arquilian, on doit préciser la configuration dans le `arquilia
 ```
 Le `mem` permet de définir la BD en mémoire (RAM).
 Le `shutdown` éteint la BD après la dernière connexion.
-Le `JtaManaged` supporte les transtation au niveau du container.
+Le `JtaManaged` supporte les transactions au niveau du container.
 Le `LogSql` permet de logger les requêtes SQL générées par JPA.
 
 Pour tester la persistence, un `EntityManager` est nécessaire.
