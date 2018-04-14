@@ -32,7 +32,7 @@ Permet de définir un élément qui ne peut pas exister seul. Par exemple si un 
 #### Id et GeneratedValue
 ```Java
 @Id
-@GeneratedValue
+@GeneratedValue(strategy = GenerationType.AUTO)
 ```
 Permet de définir l'attribut ID dans la base de donnée. Il est obligatoire. Le `@GeneratedValue` permet de générer automatiquement la valeur.
 
@@ -54,6 +54,7 @@ Depuis la classe Organizer.
 private Set<Event> events = new HashSet<>();
 ```
 Permet de définir la relation entre deux élément de la base de données.
+Ne pas oublier de définir la stratégie lorsque l'on delete d'un côté ou de l'autre ([cascading](https://github.com/polytechnice-si/4A_ISA_TheCookieFactory/blob/develop/chapters/Persistence.md#cascading-operation-through-relations))
 
 ___
 
@@ -105,10 +106,41 @@ Le fichier **resources.xml** contient la définition pour se connecter à la bas
     </Resource>
 </resources>
 ```
+-----
 
 ### Utilisation
 
+#### Constructor
+Un constructeur vide est nécessaire.
 
+#### Equal
+La méthode `equal` doit reposer sur des business items. On doit pouvoir définir en quoi deux entités sont égales d'un point de vue business.
+Lorsque l'on défini cette méthode, il faut faire attention à ne pas faire de références cyclique qui entrainerait une boucle infine d'appels.
+
+#### HashCode
+La fonction `hashcode` doit être correctement défine puisqu'elle sert à identifier les objet en mémoire. Mêmes remarques que pour `equal`.
+
+#### Testing
+Comme on utilise Arquilian, on doit préciser la configuration dans le `arquilian.xml`.
+
+```xml
+<property name="properties">
+  my-datasource = new://Resource?type=DataSource
+  my-datasource.JdbcUrl = jdbc:hsqldb:mem:TCFDB;shutdown=true
+  my-datasource.UserName = sa
+  my-datasource.Password =
+  my-datasource.JtaManaged = true
+  my-datasource.LogSql = true
+</property>
+```
+Le `mem` permet de définir la BD en mémoire (RAM).
+Le `shutdown` éteint la BD après la dernière connexion.
+Le `JtaManaged` supporte les transtation au niveau du container.
+Le `LogSql` permet de logger les requêtes SQL générées par JPA.
+
+Pour tester la persistence, un `EntityManager` est nécessaire.
+
+**To be continued ...**
 
 -----
 
