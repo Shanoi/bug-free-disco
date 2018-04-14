@@ -12,7 +12,6 @@ L'utilisateur saisi la commande ***register id password*** dans la cli (s'il n'e
 
 # PolyEvent Framework Facilitation...
 
-test
 
 ## J2EE & Tomee
 
