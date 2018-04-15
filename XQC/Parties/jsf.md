@@ -1,5 +1,5 @@
-## JSF
+# JSF
 
-### State machine
+## State machine
 
-### Fichiers nécessaires et arborescence
+## Fichiers nécessaires et arborescence
