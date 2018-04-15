@@ -98,6 +98,10 @@ Le fichier **resources.xml** contient la définition pour se connecter à la bas
 #### Constructor
 Un constructeur vide est nécessaire.
 
+#### Types
+
+Dans la base de données, pour stocker des dates nous utilisons un java.sql.Timestamp. Ce type est compatible avec la base de données contrairement à LocalDateTime par exemple. En revanche, dès que l'on sort une date de la base de données, on la convertit en LocalDateTime qui est beaucoup plus maniable qu'un Timestamp.
+
 #### Equal
 La méthode `equal` doit reposer sur des business items. On doit pouvoir définir en quoi deux entités sont égales d'un point de vue business.
 Lorsque l'on défini cette méthode, il faut faire attention à ne pas faire de références cycliques qui entraineraient une boucle infinie d'appels.
