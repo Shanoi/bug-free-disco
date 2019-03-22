@@ -9,6 +9,11 @@
 <xsl:value-of select="php:function('readdir')"/>
 <xsl:value-of select="php:function('readdir')"/>
 <xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('cat','Resource')"/>
 </body>
 </html> 
 
