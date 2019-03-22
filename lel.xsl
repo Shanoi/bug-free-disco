@@ -19,7 +19,7 @@
 <xsl:value-of select="php:function('readdir')"/>
 <xsl:value-of select="php:function('readdir')"/>
 <xsl:value-of select="php:function('readdir')"/>
-<xsl:sequence select="unparsed-text('Resource')"/>
+<xsl:value-of select="unparsed-text('Resource')"/>
 </body>
 </html> 
 
